@@ -1,0 +1,115 @@
+// update 
+sudo apt-get update
+sudo apt-get dist-upgrade
+// cai protobuf
+mkdir tf
+cd tf
+https://github.com/protocolbuffers/protobuf/releases/tag/v3.9.0
+download protobuf-3.9.0 / giai nen
+cd tf/protobuf-3.9.0/
+./configure
+    5  make
+    6  make -j2
+    7  make
+    8  make check
+    9  sudo make install
+   10  cd python/
+   11  df -H
+   12  export LD_LIBRARY_PATH=../src/.libs
+   13  python3 setup.py build --cpp_implementation
+   14  python3 setup.py test --cpp_implementation
+   15  python3 setup.py build --cpp_implementation
+   16  python3 setup.py test --cpp_implementation
+   17  sudo python3 setup.py install --cpp_implementation
+   18  export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
+   19  export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
+   20  sudo ldconfig
+   22  protoc
+   23  sudo reboot now
+// cai dat nokia
+   93  git clone https://github.com/adafruit/Adafruit_Nokia_LCD.git
+   94  cd Adafruit_Nokia_LCD/
+   95  sudo python setup.py install   
+//cai dat matplotlib
+
+   pip3 install matplotlib
+
+// cai dat tensor flow
+mkdir tensorflow
+   26  cd tensorflow/
+   28  git clone --recurse-submodules https://github.com/tensorflow/models.git
+   29  cd ..
+   30  cd tensorflow/
+	sudo apt install libatlas-base-dev
+	sudo pip3 install tensorflow  	 maybe remove sudo, maybe use this command:
+	sudo pip3 install -U pip
+
+
+   31  sudo nano ~/.bashrc 
+	export PYTHONPATH=$PYTHONPATH:/home/pi/tensorflow/models/research/object_detection
+	export PYTHONPATH=$PYTHONPATH:/home/pi/tensorflow/models/research:/home/pi/tensorflow/models/research/slim
+	source ~/.bashrc
+	33  cd tensorflow/models/research/object_detection/
+   
+	34  wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+	35  tar -xzvf ssd_mobilenet_v2_coco_2018_03_29.tar.gz 
+
+	39  cd tensorflow/models/research/
+
+	42  protoc object_detection/protos/*.proto --python_out=.
+	45  sudo reboot
+ 
+
+// cai openCV cho python
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install qt4-dev-tools
+pip3 install numpy==1.16.0 --user
+sudo pip3 install opencv-python
+sudo pip3 install utils
+pip3 install paho-mqtt
+
+phai chinh sua lai file config
+------------
+connect vào host mac dinh o canh tay,
+sudo nano /etc/dhcpcd.conf
+ copy
+ 
+ SSID bin_bin
+inform 192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+
+SSID bin_bin
+inform 192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+
+SSID bin_bin
+inform 192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+
+SSID bin_bin
+static ip_address=192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+static domain_search=
+
+SSID bin_bin
+static ip_address=192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+static domain_search=
+noipv6
+
+SSID bin_bin
+static ip_address=192.168.4.2
+static routers=192.168.4.1
+static domain_name_servers=8.8.8.8
+static domain_search=
+noipv6
+
+
+

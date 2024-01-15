@@ -1,0 +1,819 @@
+1  sudo reboot
+    2  sudo apt-get update
+    3  sudo apt-get upgrade
+    4  cd tf/protobuf-3.9.0/
+    5  make
+    6  make -j2
+    7  make
+    8  make check
+    9  sudo make install
+   10  cd python/
+   11  df -H
+   12  export LD_LIBRARY_PATH=../src/.libs
+   13  python3 setup.py build --cpp_implementation
+   14  python3 setup.py test --cpp_implementation
+   15  python3 setup.py build --cpp_implementation
+   16  python3 setup.py test --cpp_implementation
+   17  sudo python3 setup.py install --cpp_implementation
+   18  export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
+   19  export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
+   20  sudo ldconfig
+   21  protocol
+   22  protoc
+   23  sudo reboot now
+   24  df -H
+   25  mkdir tensorflow1
+   26  cd tensorflow1/
+   27  git clone --recurse-submodules https:/github.com/tensorflow/models.git
+   28  git clone --recurse-submodules https://github.com/tensorflow/models.git
+   29  cd ..
+   30  cd tensorflow/
+   31  sudo nano ~/.bashrc 
+   32  echo $PYTHONPATH
+   33  cd tensorflow/models/research/object_detection/
+   34  wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+   35  tar -xzvf ssd_mobilenet_v2_coco_2018_03_29.tar.gz 
+   36  cd protos/
+   37  ls
+   38  cd
+   39  cd tensorflow/models/research/
+   40  protoc object detection/protos/*.proto --python_out=.
+   41  ls
+   42  protoc object_detection/protos/*.proto --python_out=.
+   43  cd object_detection/protos/
+   44  ls /dev/
+   45  sudo reboot
+   46  raspistill -o cam.jpg
+   47  cd tensorflow/models/research/object_detection/
+   48  wget https://raw.githubusercontent.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi/master/Object_detection_picamera.py
+   49  python3 Object_detection_picamera.py 
+   50  cd ssd_mobilenet_v2_coco_2018_03_29/
+   51  ls
+   52  cd ..
+   53  python3 Object_detection_picamera.py 
+   54  python3 Object_detection_picamera.py --usbcam
+   55  python3 Object_detection_picamera.py
+   56  cat Object_detection_picamera.py 
+   57  python3 Object_detection_picamera.py 
+   58  cd object_detection/
+   59  wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+   60  wget http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz
+   61  python3 Object_detection_picamera.py 
+   62  wget http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz
+   63  python3 Object_detection_picamera.py 
+   64  cd object_detection/
+   65  python Object_detection_picamera.py 
+   66  python3 Object_detection_picamera.py 
+   67  cd object_detection/
+   68  python3 Object_detection_picamera.py 
+   69  python3 Object_detection_picamera.py --usbcam
+   70  df -H
+   71  htop
+   72  cd object_detection/
+   73  python3 Object_detection_picamera.py 
+   74  ifconfig
+   75  python
+   76  python3 video_capture.py 
+   77  sudo apt-get install python-rpi.gpio python3-rpi.gpio
+   78  python3
+   79  python3 video_capture.py 
+   80  sudo nano .bashrc
+   81  cd object_detection/
+   82  python3 Object_detection_picamera.py 
+   83  sudo nano ~/.bashrc
+   84  python Object_detection_picamera.py 
+   85  python3 Object_detection_picamera.py 
+   86  cd object_detection/
+   87  python3 Object_detection_picamera.py 
+   88  cd object_detection/
+   89  python3 Object_detection_picamera.py 
+   90  cd smart_bin/
+   91  python3 Object_detection_picamera.py 
+   92  protoc
+   93  git clone https://github.com/adafruit/Adafruit_Nokia_LCD.git
+   94  cd Adafruit_Nokia_LCD/
+   95  sudo python setup.py install
+   96  cd examples/
+   97  python3 image.py 
+   98  python image.py 
+   99  python3 image.py 
+  100  ping 8.8.8.8
+  101  pip3 install Adafruit-GPIO
+  102  sudo pip3 install Adafruit-GPIO
+  103  cd Adafruit_Nokia_LCD/
+  104  sudo python3 setup.py install
+  105  cd examples/
+  106  python3 image.py 
+  107  sudo apt update
+  108  sudo pip3 install gpiozero
+  109  python3 test_servo.py 
+  110  sudo python3 test_servo.py 
+  111  python3 test_servo.py 
+  112  sudo python3 test_servo.py 
+  113  cd Smart_Bin/
+  114  python3 smart_bin.py --usbcam
+  115  python3 smart_bin.py 
+  116  cd ..
+  117  python3 test_servo.py 
+  118  sudo python3 test_servo.py 
+  119  cd Smart_Bin/
+  120  python3 smart_bin.py 
+  121  cd 
+  122  cd object_detection/
+  123  python3 Object_detection_picamera.py 
+  124  cd object_detection/
+  125  python3 Object_detection_picamera.py 
+  126  sudo apt install ptcreator
+  127  sudo apt install qtcreator
+  128  sudo apt install qtcreator -y
+  129  sudo apt purge qt4-designer 
+  130  sudo apt purge qt4-dev-tools 
+  131  sudo apt purge qt4*
+  132  sudo apt install qt5-default 
+  133  sudo apt install qt5-default -y
+  134  sudo apt install pyqt5
+  135  sudo apt install PyQt5
+  136  sudo apt-get install python3-qyqt5
+  137  sudo apt-get install python3-pyqt5
+  138  sudo apt autoremove
+  139  python
+  140  nano test_pyqt.py
+  141  python test_pyqt.py 
+  142  nano test_pyqt.py
+  143  python test_pyqt.py 
+  144  sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2 /usr/lib/arm-linux-gnueabihf/libGLESv2.so
+  145  python test_pyqt.py 
+  146  nano test_pyqt.py
+  147  python test_pyqt.py 
+  148  nano test_pyqt.py
+  149  python test_pyqt.py 
+  150  nano test_pyqt.py
+  151  python test_pyqt.py 
+  152  nano test_pyqt.py
+  153  python test_pyqt.py 
+  154  sudo apt-get install bluefish
+  155  nano test_pyqt.py 
+  156  python test_pyqt.py 
+  157  nano test_pyqt.py 
+  158  python test_pyqt.py 
+  159  nano test_pyqt.py 
+  160  python test_pyqt.py 
+  161  nano test_pyqt.py 
+  162  python test_pyqt.py 
+  163  nano test_pyqt.py 
+  164  python test_pyqt.py 
+  165  nano test_pyqt.py 
+  166  python test_pyqt.py 
+  167  nano test_pyqt.py 
+  168  python test_pyqt.py 
+  169  nano test_pyqt.py 
+  170  python test_pyqt.py 
+  171  nano test_pyqt.py 
+  172  python test_pyqt.py 
+  173  nano test_pyqt.py 
+  174  python test_pyqt.py 
+  175  nano test_pyqt.py 
+  176  python test_pyqt.py 
+  177  nano test_pyqt.py 
+  178  python test_pyqt.py 
+  179  nano test_pyqt.py 
+  180  python test_pyqt.py 
+  181  nano test_pyqt.py 
+  182  python test_pyqt.py 
+  183  nano test_pyqt.py 
+  184  python test_pyqt.py 
+  185  nano test_pyqt.py 
+  186  python test_pyqt.py 
+  187  nano test_pyqt.py 
+  188  python test_pyqt.py 
+  189  nano test_pyqt.py 
+  190  python test_pyqt.py 
+  191  nano test_pyqt.py 
+  192  python test_pyqt.py 
+  193  nano test_pyqt.py 
+  194  python test_pyqt.py 
+  195  nano test_pyqt.py 
+  196  python test_pyqt.py 
+  197  nano test_pyqt.py 
+  198  python test_pyqt.py 
+  199  nano test_pyqt.py 
+  200  python test_pyqt.py 
+  201  nano test_pyqt.py 
+  202  python test_pyqt.py 
+  203  nano test_pyqt.py 
+  204  python test_pyqt.py 
+  205  nano test_pyqt.py 
+  206  python test_pyqt.py 
+  207  nano test_pyqt.py 
+  208  python test_pyqt.py 
+  209  nano test_pyqt.py 
+  210  python test_pyqt.py 
+  211  nano test_pyqt.py 
+  212  python test_pyqt.py 
+  213  nano test_pyqt.py 
+  214  python test_pyqt.py 
+  215  nano test_pyqt.py 
+  216  python pyqt.py 
+  217  git clone https://github.com/headmelted/codebuilds.git
+  218  wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
+  219  curl -L https://code.headmelted.com/installers/apt.sh | sudo bash
+  220  cd Smart_Bin/
+  221  python smart_bin.py 
+  222  cd Smart_Bin/
+  223  python smart_bin.py 
+  224  cd SmartBin/
+  225  python smart_bin.py 
+  226  cd ..
+  227  cd Smart_Bin/
+  228  python smart_bin.py 
+  229  cd ..
+  230  cd SmartBin/
+  231  python smart_bin.py 
+  232  cd ..
+  233  ls
+  234  python pyqt.py 
+  235  python smart_bin.py 
+  236  python
+  237  cd Smart_Bin/
+  238  cd ..
+  239  cd object_detection/
+  240  python Object_detection_picamera.py --usbcam
+  241  python Object_detection_picamera.py --u
+  242  cd Desktop/
+  243  cd SmartBin/
+  244  python smart_bin.py 
+  245  killall python
+  246  python smart_bin.py 
+  247  htop
+  248  killall python3
+  249  killall python
+  250  python smart_bin.py 
+  251  cd Desktop/
+  252  cd SmartBin/
+  253  python smart_bin.py 
+  254  sudo -s
+  255  sudo find / -name libEGL -type f
+  256  sudo find / -name libEGL* -type f
+  257  ln -fs /usr/lib/arm-linux-gnueabihf/libEGL.so.1 /usr/lib/arm-linux-gnueabihf/libEGL.so.1.1.0
+  258  sudo libEGL warning: DRI2: failed to authenticate
+  259  qt5ct: using qt5ct plugin
+  260  sudo apt-get build-dep qt5-default 
+  261  sudo libEGL warning: DRI2: failed to authenticate
+  262  qt5ct: using qt5ct plugin
+  263  python smart_bin.py 
+  264  sudo apt-get install python3-pyqt5
+  265  sudo apt-get install python3-qt5
+  266  sudo pip  install python-qt5
+  267  python
+  268  python smart_bin.py 
+  269  GLib-GObject-WARNING **: 10:59:23.820: cannot register existing type 'GdkDisplayManager'
+  270  sudo apt-get install libgtk-3--0
+  271  sudo apt-get install libgtk-3-0
+  272  sudo apt-get install libgtk-3-dev 
+  273  python smart_bin.py 
+  274  sudo apt-get purge qt5*
+  275  python smart_bin.py 
+  276  sudo apt-get purge qt*
+  277  python smart_bin.py 
+  278  cd SmartBin/
+  279  python smart_bin.py 
+  280  cd SmartBin/
+  281  python smart_bin.py 
+  282  cd ..
+  283  cd Smart_Bin/
+  284  python smart_bin.py 
+  285  cd Smart
+  286  cd Smart_Bin/
+  287  python smart_bin.py 
+  288  python
+  289  cd SmartBin/
+  290  python smart_bin.py 
+  291  ls -a
+  292  python smart_bin.py 
+  293  cd Smart_Bin/
+  294  python smart_bin.py 
+  295  sudo pigpiod
+  296  python smart_bin.py 
+  297  ifconfig
+  298  ping 8.8.8.8
+  299  ifconfig
+  300  ping gmail.com
+  301  ping 8.8.8.8
+  302  ./setup.py build
+  303  sudo apt-get install python-dev libboost-python-dev 
+  304  sudo ln -s /usr/lib/arm-linux-gnueabihf/libboost_python-py34.so /usr/lib/arm-linux-gnueabihf/libb
+  305  sudo ln -s /usr/lib/arm-linux-gnueabihf/libboost_python-py34.so /usr/lib/arm-linux-gnueabihf/libboost_python3.so 
+  306  sudo ln -s /usr/lib/arm-linux-gnueabihf/libboost_python-py37.so /usr/lib/arm-linux-gnueabihf/libboost_python3.so 
+  307  ./setup.py build
+  308  cd ..
+  309  ./configure 
+  310  cd pyRF24/
+  311  ./setup.py build
+  312  cd ..
+  313  sudo make
+  314  sudo make -j4
+  315  sudo make install
+  316  cd pyRF24/
+  317  ./setup.py build
+  318  sudo ./setup.py install  
+  319  python
+  320  cd SmartBin/
+  321  python smart_bin.py 
+  322  cd ..
+  323  cd Smart_Bin/
+  324  python smart_bin.py 
+  325  sudo apt-get install python-dev libboost-python-dev 
+  326  wget https://github.com/TMRh20/RF24/archive/master.zip
+  327  cd ..
+  328  wget https://github.com/TMRh20/RF24/archive/master.zip
+  329  git clone https://github.com/TMRh20/RF24/archive/master.zip
+  330  python rf24_test.py 
+  331  python
+  332  cd RF24-master/
+  333  cd pyRF24/
+  334  ls
+  335  cd ..
+  336  cd examples
+  337  ls
+  338  cd pingpair_dyn/
+  339  ls
+  340  cd ../..
+  341  cd examples_linux/
+  342  ls
+  343  python pingpair_dyn.py 
+  344  python
+  345  cd 
+  346  git clone ile "<stdin>", line 1, in <module>
+  347  RuntimeError: unidentifiable C++ exception
+  348  >>> radio = RF24(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ)
+  349  git clone https://github.com/jpbarraca/pynrf24.git
+  350  cd pynrf24/
+  351  ls
+  352  sudo python setup.py 
+  353  sudo python setup.py build
+  354  sudo python setup.py install
+  355  ls
+  356  cd examples/
+  357  ls
+  358  python send.py 
+  359  python recv.py 
+  360  python2.7 recv.py 
+  361  cd
+  362  sudo rm -r pynrf24/
+  363  ls
+  364  python
+  365  cd RF24-master/
+  366  ls
+  367  ls /dev/spidev0.
+  368  ls /dev/spidev0.*
+  369  cd ..
+  370  mkdir rf24cpp
+  371  cd rf24cpp/
+  372  nano receiver.cpp
+  373  g++ -o receiver receiver.cpp -lrf24-bcm
+  374  ls
+  375  ./receiver 
+  376  nano receiver.cpp
+  377  cd rf24cpp/
+  378  g++ -o receiver receiver.cpp -lrf24-bcm
+  379  ./receiver 
+  380  g++ -o receiver receiver.cpp -lrf24-bcm
+  381  ./receiver 
+  382  g++ -o receiver receiver.cpp -lrf24-bcm
+  383  ./receiver 
+  384  g++ -o receiver receiver.cpp -lrf24-bcm
+  385  ./receiver 
+  386  g++ -o receiver receiver.cpp -lrf24-bcm
+  387  ./receiver 
+  388  ./configure --driver=SPIDEV
+  389  sudo make install -B
+  390  python
+  391  cd pyRF24/
+  392  ./setup.py build   
+  393  sudo ./setup.py install
+  394  python
+  395  cd ..
+  396  cd..
+  397  cd
+  398  cd rf24cpp/
+  399  ls
+  400  g++ -o receiver receiver.cpp -lrf24-bcm
+  401  ./receiver 
+  402  g++ -o receiver receiver.cpp -lrf24-bcm
+  403  ./receiver 
+  404  cgit clone https://github.com/intel-iot-devkit/mraa.git
+  405  git clone https://github.com/intel-iot-devkit/mraa.git
+  406  cd mraa/
+  407  mkdir build
+  408  cd build/
+  409  cmake .. -DBUILDSWIGNODE=OFF
+  410  sudo install cmake
+  411  sudo apt-get install cmake
+  412  sudo make install
+  413  sudo install cmake
+  414  cmake .. -DBUILDSWIGNODE=OFF
+  415  sudo make install
+  416  nano /etc/ld.so.conf 
+  417  sudo nano /etc/ld.so.conf 
+  418  sudo ldconfig
+  419  cd
+  420  cd RF24-master/
+  421  ./configure --driver=MRAA
+  422  sudo make install -B
+  423  cd ..
+  424  cd rf24cpp/
+  425  g++ -o receiver receiver.cpp -lrf24-bcm
+  426  ./receiver 
+  427  nano receiver
+  428  nano receiver.cpp 
+  429  g++ -o receiver receiver.cpp -lrf24-bcm
+  430  ./receiver 
+  431  nano receiver.cpp 
+  432  g++ -o receiver receiver.cpp -lrf24-bcm
+  433  nano receiver.cpp 
+  434  ./receiver 
+  435  nano receiver.cpp 
+  436  g++ -o receiver receiver.cpp -lrf24-bcm
+  437  ./receiver 
+  438  cd ..
+  439  cd RF24-master/
+  440  ls
+  441  make uninstall
+  442  make clean
+  443  cd ..
+  444  sudo rm -r RF24-master/
+  445  git clone https://github.com/TMRh20/RF24.git
+  446  cd RF24/
+  447  make all && sudo make install
+  448  cd ..
+  449  cd rf24cpp/
+  450  g++ -o receiver receiver.cpp -lrf24-bcm
+  451  cd rf24cpp/
+  452  ./receiver 
+  453  g++ -o receiver receiver.cpp -lrf24
+  454  ./receiver 
+  455  python
+  456  cd ..
+  457  wget https://github.com/Gadgetoid/py-spidev/archive/master.zip
+  458  unzip master.zip 
+  459  rm master.zip 
+  460  cd py-spidev-master/
+  461  ls
+  462  sudo python setup.py install
+  463  cd
+  464  mkdir NRF24L01
+  465  cd NRF24L01/
+  466  git clone https://github.com/Blavery/lib_nrf24
+  467  ls
+  468  cd lib_nrf24/
+  469  cp lib_nrf24.py ~/NRF24L01/
+  470  cd 
+  471  ls
+  472  cd NRF24L01/
+  473  ls
+  474  nano lib_nrf24
+  475  nano lib_nrf24.py 
+  476  nano transmiter.py
+  477  python transmiter.py 
+  478  python
+  479  cd rf24cpp/
+  480  ls
+  481  g++ -o receiver receiver.cpp -lrf24
+  482  ./receiver 
+  483  g++ -o receiver receiver.cpp -lrf24
+  484  ls
+  485  cd 
+  486  cd Desktop/
+  487  git clone https://github.com/totai02/SmartBin.git
+  488  cd Desktop/SmartBin/
+  489  git init
+  490  cd Desktop/
+  491  git clone https://github.com/totai02/SmartBin.git
+  492  git add .
+  493  cd SmartBin/
+  494  git add .
+  495  git commit -m "first commit"
+  496  git config --global user.email "totai9702@gmail.com"
+  497  git config --global user.name "ToTai"
+  498  git commit -m "first commit"
+  499  git push origin master
+  500  python transmiter.py 
+  501  python
+  502  cd
+  503  cd rf24cpp/
+  504  ls
+  505  ./receiver 
+  506  cd ..
+  507  ls
+  508  cd RF24/
+  509  ls
+  510  cd examples_linux/
+  511  ls
+  512  make
+  513  ls
+  514  ./gettingstarted
+  515  ./transfer 
+  516  sudo pigpiod
+  517  cd SmartBin/
+  518  python smart_bin.py 
+  519  sudo pigpiod
+  520  cd SmartBin/
+  521  python smart_bin.py 
+  522  python
+  523  ls
+  524  sudo rm -r rf24_test.py 
+  525  sudo rm -r py-spidev-master/
+  526  ls
+  527  git clone https://github.com/tmrh20/RF24.git RF24
+  528  cd RF24/
+  529  ./configure 
+  530  sudo make install
+  531  cd examples
+  532  cd ..
+  533  cd examples_linux/
+  534  make
+  535  ./gettingstarted
+  536  sudo ./gettingstarted
+  537  sudo python
+  538  cd
+  539  nano transfer.cpp
+  540  g++ -o Transfer transfer.cpp -lrf24
+  541  ./Transfer 
+  542  sudo ./Transfer 
+  543  nano transfer.cpp 
+  544  g++ -o Transfer transfer.cpp -lrf24
+  545  nano transfer.cpp 
+  546  nano transfer.cpp
+  547  g++ -o Transfer transfer.cpp -lrf24
+  548  sudo ./Transfer 
+  549  nano transfer.cpp
+  550  g++ -o Transfer transfer.cpp -lrf24
+  551  nano transfer.cpp
+  552  g++ -o Transfer transfer.cpp -lrf24
+  553  sudo ./Transfer 
+  554  nano transfer.cpp
+  555  g++ -o Transfer transfer.cpp -lrf24
+  556  sudo ./Transfer 
+  557  nano transfer.cpp
+  558  sudo ./Transfer 
+  559  nano transfer.cpp
+  560  g++ -o Transfer transfer.cpp -lrf24
+  561  sudo ./Transfer 
+  562  sudo apt purge code-oss 
+  563  sudo apt autoremove
+  564  wget -o - https://packagecloud.io/headmelted/codebuilds/gpgkey| sudo apt-key add -
+  565  wget -o - https://packagecloud.io/headmelted/codebuilds/gpgkey
+  566  sudo apt-key add -
+  567  sudo apt-get install code-oss=1.29.0-1539702286
+  568  apt-mark hold code-oss
+  569  sudo apt-mark hold code-oss
+  570  python nrf24l01.py 
+  571  sudo python nrf24l01.py 
+  572  sudo python test.py 
+  573  sudo python nrf24l01.py 
+  574  make clean
+  575  cd Desktop/
+  576  ls
+  577  sudo ls
+  578  sudo arduino
+  579  sudo ardruino
+  580  sudo arduino
+  581  cd
+  582  pip install paho-mqtt
+  583  sudo pip install paho-mqtt
+  584  python
+  585  cd SmartBin_Solution/
+  586  cd SmartBin/
+  587  python smart_bin.py 
+  588  rm -r .git
+  589  ls -a
+  590  sudo rm -rf .git
+  591  ls -a
+  592  rm -r .gitignore 
+  593  ls -a
+  594  git clone https://github.com/totai02/SmartBin_Solution.git 
+  595  python app.py 
+  596  cd ..
+  597  git add .
+  598  git push origin master
+  599  git commit -m "push code"
+  600  git push origin master
+  601  sudo apt-get install mosquitto-client
+  602  sudo apt-get install mosquitto-clients
+  603  mosquitto_pub -h 192.168.0.16 -t /test -m "ok"
+  604  python mqtt_service.py 
+  605  python 
+  606  python app.py 
+  607  python
+  608  python app.py 
+  609  git status
+  610  git push origin master
+  611  python shapes.py 
+  612  python app.py 
+  613  python
+  614  python app.py 
+  615  cd SmartBin_Solution/ObjectDetection/
+  616  python app.py 
+  617  cd SmartBin_Solution/ObjectDetection/
+  618  python app.py 
+  619  sudo nano .bashrc 
+  620  sudo nano ~/.bashrc 
+  621  python app.py 
+  622  sudo nano ~/.bashrc 
+  623  python app.py 
+  624  mosquitto_pub -h 192.168.0.16 -t /object -m "{'id': 1}"
+  625  mosquitto_pub -h 192.168.0.16 -t /object -m '{"id": 1}'
+  626  git add .
+  627  git commit -m "send object detection result via mqtt"
+  628  git pull origin master
+  629  git push origin master
+  630  mosquitto_sub -h 192.168.0.16 -t /status
+  631  python app.py 
+  632  python app.py 
+  633  cd
+  634  python video_capture.py 
+  635  python app.py 
+  636  cd ..
+  637  git add .
+  638  git commit -m "fix image roi"
+  639  git pull origin master
+  640  git add .
+  641  git push origin master
+  642  python app.py 
+  643  cd
+  644  python video_capture.py 
+  645  ls /dev/
+  646  cd
+  647  python video_capture.py 
+  648  reboot
+  649  cd
+  650  python video_capture.py 
+  651  python image
+  652  python image_capture.py 
+  653  ls /dev/
+  654  python video_capture.py 
+  655  reboot
+  656  cd
+  657  python video_capture.py 
+  658  ls /dev
+  659  python video_capture.py 
+  660  python app.py 
+  661  cd
+  662  python app.py 
+  663  python video_capture.py 
+  664  ls /dev/
+  665  reboot
+  666  ls /dev/
+  667  raspistill -o cam.jpg
+  668  ls /dev/
+  669  raspistill -o cam.jpg
+  670  cd
+  671  python image
+  672  python image_capture.py 
+  673  ls /dev
+  674  reboot
+  675  ls /dev
+  676  cd
+  677  python video_capture.py 
+  678  ls /dev
+  679  cd 
+  680  python image
+  681  python image_capture.py 
+  682  cd /home/pi
+  683  cd
+  684  python image_capture.py 
+  685  cd /home/pi
+  686  ls
+  687  python image_capture.py 
+  688  q
+  689  ls
+  690  python app.py 
+  691  cd
+  692  python shapes.py 
+  693  python app.py 
+  694  cd
+  695  python shapes.py 
+  696  python app.py 
+  697  cd ..
+  698  git status
+  699  git add .
+  700  git commit -m "update code objectdetect"
+  701  git push origin master
+  702  git pull origin master
+  703  git push origin master
+  704  python app.py 
+  705  python imagecapture.py
+  706  ls
+  707  cd ..
+  708  ls
+  709  cd ..
+  710  ls
+  711  python image_capture.py
+  712  cd ..
+  713  cd.. 
+  714  cd ..
+  715  python image_capture.py
+  716  cd 
+  717  python video_capture.py 
+  718  python app.py 
+  719  sudo nano ~/.bashrc
+  720  sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+  721  reboot
+  722  python app.py 
+  723  sudo nano ~/.bashrc
+  724  python app.py 
+  725  mosquitto_pub -t /object -m -h 192.168.0.16 -m '{"id: 0"}'
+  726  mosquitto_pub -t /object -h 192.168.0.16 -m '{"id: 0"}'
+  727  python app.py 
+  728  mosquitto_pub -t /object -h 192.168.0.16 -m '{"id: 0"}'
+  729  mosquitto_pub -t /object -h 192.168.0.16 -m '{"id": 0}'
+  730  reboot
+  731  python app.py 
+  732  CD
+  733  cd
+  734  ls
+  735  python image_capture.py 
+  736  sudo nano ~/.bashrc 
+  737  reboot
+  738  sudo nano ~/.bashrc 
+  739  python app.py 
+  740  killall python
+  741  reboot
+  742  python app.py 
+  743  reboot
+  744  python app.py 
+  745  sudo nano ~/.bashrc 
+  746  sudo rasp-config
+  747  sudo rasp-configure
+  748  sudo rasp-config
+  749  sudo rasip-config
+  750  sudo raspi-config
+  751  cd
+  752  python image_capture.py 
+  753  cd
+  754  python image_capture.py 
+  755  cd 
+  756  python image_capture.py 
+  757  python app.py 
+  758  ls
+  759  python object_detector.py 
+  760  python app.py 
+  761  cd .. 
+  762  cd ..
+  763  ls
+  764  cd /home/
+  765  ls
+  766  cd /home/pi/
+  767  ls
+  768  python image_capture.py
+  769  ls
+  770  cd ..
+  771  ls
+  772  cd ..
+  773  ls
+  774  python video_capture.py
+  775  python app.py 
+  776  cd
+  777  ls
+  778  python image_capture.py 
+  779  cd
+  780  python image_capture.py 
+  781  cd
+  782  python image_capture.py 
+  783  python video_capture.py 
+  784  sudo python video_capture.py 
+  785  python app.py
+  786  cd
+  787  sudo python video_capture.py 
+  788  python video_capture.py 
+  789  cd
+  790  python video_capture.py 
+  791  python --version 
+  792  nano save.py
+  793  python save.py 
+  794  nano save.py
+  795  python video_capture.py 
+  796  cd
+  797  python video_capture.py 
+  798  cd
+  799  python video_capture.py 
+  800  cd
+  801  ls
+  802  python image_capture.py 
+  803  python app.py
+  804  cd
+  805  ls
+  806  cd Desktop/
+  807  ls
+  808  cd
+  809  ls
+  810  cd tra
+  811  trash
+  812  cd .local/share/Trash/
+  813  ls
+  814  cd files/
+  815  ls
+  816  rm -rf *
+  817  ls
+  818  python app.py 
+  819  history

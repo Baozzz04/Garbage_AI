@@ -1,0 +1,176 @@
+// cai linux
+    1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  reboot
+// install driver nvidia 410
+	4 sudo add-apt-repository ppa:graphics-drivers/ppa
+    	5  sudo apt-get update
+    	6  sudo apt-get install nvidia-driver-410
+	7 reboot
+    	2 check:	open terminal :     nvidia-smi
+
+// cai cuda 10
+	Link download:
+		https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64
+
+		***note: choose type save file.
+
+     	1 cd Downloads/
+     	2 sudo dpkg -i cuda-repo-ubuntu1804-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
+     	3 sudo apt-key add /var/cuda-repo-10-0-local-10.0.130-410.48/7fa2af80.pub
+     	4 sudo apt-get update
+     	5 sudo apt-get install cuda
+
+   	6 nano ~/.bashrc
+		*** keo xuong cuoi:
+		copy:  	
+export PATH=/usr/local/cuda-10.0/bin:/usr/local/cuda-10.0/NsightCompute-1.0${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+			
+
+		copy done:
+			ctrl+o >> enter >> ctrl+x
+
+   	7 source ~/.bashrc
+   	8 nvcc -V     (check cuda Version)  (neu khong duoc thi reboot roi check lai)
+
+// cai cudnn 7.6.0
+	Link Download :
+		https://developer.nvidia.com/rdp/form/cudnn-download-survey
+	if: **join >> name_account >> click agree >> cudann achrive >> cudnn v760 (may, 20) for CUDA 10.0 >> cudnn library for 
+
+// Linux + cudnn Runtime , developer , code samples for Ubuntu 18.04.
+	    **login >>> create account >> join.
+
+	*** note : save file.
+
+   	1 cd Downloads/
+	2 sudo tar -xzvf cudnn-10.0-linux-x64-v7.6.1.34.tgz
+   	3 sudo dpkg -i libcudnn7_7.6.0.64-1+cuda10.0_amd64.deb
+    	4 sudo dpkg -i libcudnn7-dev_7.6.0.64-1+cuda10.0_amd64.deb
+   	5 sudo dpkg -i libcudnn7-doc_7.6.0.64-1+cuda10.0_amd64.deb
+
+   	6 sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+	7 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+   	8 cd
+   	9 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+     	10 reboot
+
+	check :
+
+   	11 cd /usr/src/cudnn_samples_v7/mnistCUDNN/.
+   	12 sudo make clean 
+   	13 sudo make
+   	14 ./mnistCUDNN
+		**** if terminal print : test passed >> okay
+ 
+// cai dat Anaconda3:
+	Link Download:
+		https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+
+   	1 cd Downloads/
+   	2 chmod +x Anaconda3-2018.12-Linux-x86_64.sh
+   	3 cd
+   	4 bash ~/Downloads/Anaconda3-2018.12-Linux-x86_64.sh (yes all question)
+   	5 source ~/.bashrc
+
+// cai dat Tensorflow:
+	Open new Terminal;
+	
+	1 conda create -n tf pip python==3.7 (tf = name of enviroment)
+	2 conda activate tf  (same tf above)
+	3 pip uninstall tensorflow_gpu==1.13.1
+// or use this command
+conda install -c anaconda tensorflow-gpu==1.13.1
+	
+	check: (activate the tf environment);
+	
+	4 python
+
+// tao folder TensorFlow voi 3 thu muc con : 
+	* addons
+	* models
+	* workspaces 
+	goto https://github.com/tzutalin/labelImg and git lableImage, extrast to addon / rename labelImage
+  	install this tool
+	sudo apt-get install pyqt5-dev-tools
+	pip install -r requirements/requirements-linux-python3.txt (if got error messages, adding --user at the end.) maybe do this step at the end
+	make qt5py3
+// tai models
+	1  cd TensorFlow/
+  	2  sudo apt install git
+  	3  git clone https://github.com/tensorflow/models.git
+	4  git clone https://github.com/totai02/TensorFlow-Object-Detection-Train.git
+	5 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/	detection_model_zoo.md?fbclid=IwAR2_StjZVP_lZDFi5Zm-	RIcnlFPPNH1qE5quOt-0UJrRzSUYGGS8EFneWn8
+
+	6. choose and download this mode; ssdlite_mobilenet_v2_coco
+
+//
+	sudo nano ~/.bashrc  (Edit PATH_TO_TF to correct path, ex: /home/ubuntu)
+export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research/object_detection
+export PYTHONPATH=$PYTHONPATH:<PATH_TO_TF>/TensorFlow/models/research:<PATH_TO_TF>/TensorFlow/models/research/slim
+
+	7. cd Tensorflow\models\research
+	5 python setup.py build
+	6 python setup.py install
+  	7 cd 
+  	11 cd TensorFlow/models/research/
+  	12 sudo ldconfig ........( ///maybe you have wrong like this: /usr/local/cuda-10.0/targets/x86_64-linux/lib/libcudnn.so.7 is not a symbolic link...)
+
+access this path: usr/local/cuda/lib64 and run terminal from this path
+
+
+	13 sudo ln -sf libcudnn.so.7.4.1 libcudnn.so.7
+	14 sudo ln -sf libcudnn.so.7 libcudnn.so
+	15 sudo ldconfig
+						)
+  161  reboot
+// cai protobuf
+	Link	
+	https://github.com/protocolbuffers/protobuf/releases
+
+	choose file 3.9.1.zip
+	unzip from Downloads.
+
+ 	1 cd TensorFlow/models/research/
+   	
+	2 sudo snap install protobuf (if you get error, replace by this command below)
+
+	2' sudo apt install protobuf-compiler
+
+	3. protoc object_detection/protos/*.proto --python_out=.
+
+   	4 (optional) sudo apt-get install htop
+	htop
+
+
+//Install numpy
+  	1  sudo apt install python3-pip
+   	2  pip3 install numpy==1.16.0 --user
+
+// Install Prerequisites
+	0 conda activate tf
+ 	1 pip install pillow
+  	2 pip install cython
+  	3 pip install matplotlib
+  	4 pip install pillow
+  	5 pip install lxml
+  	6 pip install jupyter
+  	7 pip install opencv-python
+  	
+// Install object_detection
+	copy TensorFlow-Object-Detection-Train to workspace
+
+	1 choose file : ssdlite_mobilenet_v2_coco
+	2 extract to TensorFlow-Object-Detection-Train/     and rename == inference_graph
+//run test with image
+	1 conda activate tf
+	2 cd TensorFlow/workspaces/TensorFlow-Object-Detection-Train
+	3 rename .JPG >>> .jpg (for the first time)
+    	4 python object_detection_image.py 
+
+--------------- reference link
+https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html?fbclid=IwAR2ZjLuRskMlIW9HcuzX7lH9GT4Pcjv2IRPbCEWbFV-T3xqcNCIne1KTD1s#tensorflow-models-installation
+
+

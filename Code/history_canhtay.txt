@@ -1,0 +1,47 @@
+1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  reboot
+    4  python
+    5  python3
+    6  cd /usr/bin/
+    7  sudo unlink python
+    9  sudo ln -s /usr/bin/python3.7 python
+   10  python
+   12  git clone https://github.com/nRF24/RF24.git
+   13  cd RF24/
+   14  ./configure 
+   15  sudo make install
+   16  cd pyRF24/
+   17  sudo apt-get install python-dev libboost-python-dev 
+   21  sudo apt-get install python-setuptools 
+   24  sudo python setup.py build
+   25  sudo python setup.py install
+   26  python
+   27  sudo apt install python-setuptools python3-setuptools
+   28  sudo apt-get install pigpio python-pigpio python3-pigpio
+   29  python
+   
+
+   33  git clone https://github.com/totai02/SmartBin_Solution.git
+   34  sudo apt install -y mosquitto mosquitto-clients
+   35  sudo systemctl enable mosquitto.service
+   36  mosquitto_sub -t /object
+
+ //  38  sudo apt-get install code-oss=1.29.0-1539702286
+ //neu khong co phải load ve va cai tu file deb sudo dpkg -i
+ load o day https://github.com/headmelted/codebuilds/releases
+   39  wget -o - https://packagecloud.io/headmelted/codebuilds/gpgkey| sudo apt-key add -
+   41  sudo apt-key add gpgkey 
+   45  cd SmartBin_Solution/SmartBin_Hub/
+   47  pip3 install paho-mqtt  //khong duoc phai load ve cai
+    git clone https://github.com/eclipse/paho.mqtt.python
+	cd paho.mqtt.python
+	python setup.py install
+   
+   63  sudo pigpiod
+   70  sudo nano ~/.bashrc
+   sudo pigpiod
+   cd SmartBin_Solution/SmartBin_Hub
+
+   56  sudo python app.py 
+   175  history

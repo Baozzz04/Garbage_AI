@@ -1,0 +1,54 @@
+Quan trọng nhất của Pi khi thành AP là disable cái supplicant của nó
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install dnsmasq hostapd
+sudo systemctl stop dnsmasq
+sudo systemctl stop hostapd
+sudo nano /etc/dhcpcd.conf
+interface wlan0
+static ip_address=192.168.4.1/24
+nohook wpa_supplicant
+---------------
+sudo service dhcpcd restart
+------
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
+sudo nano /etc/dnsmasq.conf
+interface=wlan0 
+dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+-------------
+sudo nano /etc/hostapd/hostapd.conf
+interface=wlan0
+driver=nl80211
+ssid=green_house
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=107108t3
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+----------------------------------
+sudo nano /etc/default/hostapd
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+-----------------------------
+sudo service hostapd start 
+//enable wifi
+#-----------
+if got this messeage "Failed to start hostapd.service: Unit hostapd.service is masked."
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
+sudo systemctl start hostapd
+-----------
+
+sudo service dnsmasq start 
+sudo reboot
+
+maybe use this for all
+sudo systemctl enable hostapd
+sudo apt-get autoremove --purge git lighttpd php7.0-cgi vnstat dnsmasq hostapd
+sudo apt-get clean
+wget -q https://git.io/voEUQ -O /tmp/raspap && bash /tmp/raspap
